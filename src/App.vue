@@ -14,7 +14,7 @@
                 alt="Pikachu"
             />
             <div class="info">
-                <h1><span class="hl">Pika</span>chu</h1>
+                <h1><span class="hl">Pikachu</span></h1>
                 <span class="type electric">Electric</span>
                 <span class="type normal">Normal</span>
             </div>
