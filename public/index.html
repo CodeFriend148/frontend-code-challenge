@@ -4,14 +4,61 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
+   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
+    
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    <script src= "https://code.jquery.com/jquery-3.5.1.js"> </script> 
+
+
+<body>
+<section> 
+        <h2>Pokemon List</h2> 
+  
+        <!-- TABLE CONSTRUCTION-->
+        <table id='table'> 
+            <!-- HEADING FORMATION -->
+            <tr> 
+                <th>Name</th> 
+                <th>Generation</th> 
+                <th>Types</th> 
+            </tr> 
+  
+            <script> 
+                $(document).ready(function () { 
+  
+                    // FETCHING DATA FROM JSON FILE 
+                    $.getJSON("https://gist.githubusercontent.com/bar0191/fae6084225b608f25e98b733864a102b/raw/dea83ea9cf4a8a6022bfc89a8ae8df5ab05b6dcc/pokemon.json", 
+                            function (data) { 
+                        var pokeball = ''; 
+  
+                        // ITERATING THROUGH OBJECTS 
+                        $.each(data, function (key, value) { 
+  
+                            //CONSTRUCTION OF ROWS HAVING 
+                            // DATA FROM JSON OBJECT 
+                            pokeball += '<tr>'; 
+                           
+                            pokeball += '<td>' +  
+                                value.Name + '</td>'; 
+  
+                            pokeball += '<td>' +  
+                                value.Generation + '</td>'; 
+  
+                           pokeball += '<td>' +  
+                                value.Types + '</td>'; 
+  
+                            pokeball += '</tr>'; 
+                        }); 
+                          
+                        //INSERTING ROWS INTO TABLE  
+                        $('#table').append(pokeball); 
+                    }); 
+                }); 
+            </script> 
+    </section> 
+</body>
   </body>
 </html>
